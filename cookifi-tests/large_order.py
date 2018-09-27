@@ -22,6 +22,7 @@ class Cookifi_testing_Module(unittest.TestCase):
     def test_module(self):
         # declare basic variables
         driver = self.driver
+        driver.implicitly_wait(10)
         wait = WebDriverWait(driver, 10)
         # opening Cookifi website
         driver.get("https://cookifi.com/")

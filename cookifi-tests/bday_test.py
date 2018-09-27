@@ -3,6 +3,7 @@ import unittest
 from datetime import datetime, timedelta
 from decimal import Decimal
 from unicodedata import decimal
+import xmlrunner
 
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
@@ -22,6 +23,7 @@ class Cookifi_bday_test(unittest.TestCase):
     def test_bday(self):
         driver = self.driver
         # open cookifi site
+        driver.implicitly_wait(10)
         driver.get('https://cookifi.com/')
         wait = WebDriverWait(driver, 10)
         # wait for components to be loaded

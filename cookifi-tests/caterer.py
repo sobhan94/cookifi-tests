@@ -23,6 +23,7 @@ class Cookifi_bday_test(unittest.TestCase):
     def test_bday(self):
         driver = self.driver
         # open cookifi site
+        driver.implicitly_wait(10)
         driver.get('https://cookifi.com/')
         wait = WebDriverWait(driver, 10)
         wait.until(EC.presence_of_element_located((By.PARTIAL_LINK_TEXT, "Caterer")))
